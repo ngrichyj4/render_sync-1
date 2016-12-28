@@ -298,15 +298,15 @@ Sync allows you to hook into and override or extend all of the actions it perfor
 
 partial name 'list_row', resource name 'todo', order of lookup:
 
- 1. Sync.TodoListRow
- 2. Sync.ListRow
- 3. Sync.View (Default fallback)
+ 1. RenderSync.TodoListRow
+ 2. RenderSync.ListRow
+ 3. RenderSync.View (Default fallback)
 
 
-For example, if you wanted to fade in/out a row in a sync'd todo list instead of the Sync.View default of instant insert/remove:
+For example, if you wanted to fade in/out a row in a sync'd todo list instead of the RenderSync.View default of instant insert/remove:
 
 ```coffeescript
-class Sync.TodoListRow extends Sync.View
+class RenderSync.TodoListRow extends RenderSync.View
 
   beforeInsert: ($el) ->
     $el.hide()
@@ -315,7 +315,6 @@ class Sync.TodoListRow extends Sync.View
   afterInsert: -> @$el.fadeIn 'slow'
 
   beforeRemove: -> @$el.fadeOut 'slow', => @remove()
-
 ```
 
 ## Narrowing sync_new scope
