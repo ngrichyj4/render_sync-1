@@ -9,6 +9,9 @@ gemfile:
   - gemfiles/Gemfile.rails-3.x
   - gemfiles/Gemfile.rails-4.x
 
+before_install:
+  - gem update bundler
+
 # Set up and start Faye Server before tests are run
 before_script:
   - cp test/travis/sync.yml config/sync.yml
