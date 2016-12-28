@@ -35,8 +35,8 @@ In addition to real-time updates, Sync also provides:
 
 ## Requirements
 
-  - Ruby >= 1.9.3
-  - Rails 3 >= 3.1 or Rails 4
+  - Ruby >= 2.0
+  - Rails 4
   - jQuery >= 1.9
 
 ## Upgrading from 0.4.0
