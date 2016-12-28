@@ -52,6 +52,7 @@ module RenderSync
           pusher_ws_port: pusher_ws_port,
           pusher_wss_port: pusher_wss_port,
           pusher_encrypted: pusher_encrypted,
+          pusher_cluster: pusher_cluster,
           adapter: adapter
         }.reject { |k, v| v.nil? }.to_json
       end
@@ -131,6 +132,10 @@ module RenderSync
 
     def pusher_api_port
       config[:pusher_api_port]
+    end
+
+    def pusher_cluster
+      config[:pusher_cluster]
     end
 
     def pusher_ws_host

@@ -19,6 +19,10 @@ module RenderSync
         if RenderSync.pusher_api_port
           ::Pusher.port = RenderSync.pusher_api_port
         end
+
+        if RenderSync.pusher_cluster
+          ::Pusher.cluster = RenderSync.pusher_cluster
+        end
       end
 
       def batch_publish(*args)
