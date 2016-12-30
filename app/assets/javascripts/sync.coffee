@@ -279,7 +279,7 @@ class RenderSync.Partial
   refetchFromServer: (callback) ->
     $.ajax
       type: "GET"
-      url: "/sync/refetch.json"
+      url: "/render_sync/refetch.json"
       data:
         auth_token: @authToken
         partial_name: @name
