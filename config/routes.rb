@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  get 'sync/refetch', controller: 'sync/refetches', action: 'show'
+  get 'render_sync/refetch', controller: 'render_/refetches', action: 'show'
 end
