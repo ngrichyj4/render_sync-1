@@ -16,7 +16,11 @@ module RenderSync
         before_update  :prepare_sync_actions, if: -> { RenderSync::Model.enabled? }
         before_destroy :prepare_sync_actions, if: -> { RenderSync::Model.enabled? }
         
-        after_commit   :publish_sync_actions, if: -> { RenderSync::Model.enabled? }
+        #after_commit   :publish_sync_actions, if: -> { RenderSync::Model.enabled? }
+        after_create   :publish_sync_actions, if: -> { RenderSync::Model.enabled? }
+        after_update   :publish_sync_actions, if: -> { RenderSync::Model.enabled? }
+        after_save     :publish_sync_actions, if: -> { RenderSync::Model.enabled? }
+        after_destroy  :publish_sync_actions, if: -> { RenderSync::Model.enabled? }
       end
     end
     

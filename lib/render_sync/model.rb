@@ -59,6 +59,11 @@ module RenderSync
 
       end
 
+      # Mongoid hack
+      def column_names
+        self.fields.collect { |field| field[0] }
+      end
+
       # Set up a sync scope for the model defining a set of records to be 
       # updated via sync
       #
